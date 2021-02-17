@@ -1,0 +1,12 @@
+.env
+.env-dist
+!.env-gcp-build
+.editorconfig
+.git
+.gitignore
+.nuxt
+dispatch.yaml
+jsconfig.json
+README.md
+
+node_modules

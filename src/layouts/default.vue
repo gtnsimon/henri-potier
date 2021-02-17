@@ -1,0 +1,55 @@
+<template>
+  <div class="layout">
+    <!-- Header -->
+    <layout-nav
+      v-model="query"
+      :suggestions-books="suggestedBooks"
+    />
+
+    <!-- Page content -->
+    <nuxt />
+
+    <!-- Cart feedback on item added on top of content -->
+    <cart-feedback
+      @close="clearFeedback"
+      :feedback="feedback"
+    />
+  </div>
+</template>
+
+<script>
+import { mapActions, mapGetters } from 'vuex'
+import { filterHighlighted } from '~/utils/strings'
+
+export default {
+  name: 'Layout',
+  data () {
+    return {
+      suggestionsBooks: [],
+      query: '',
+    }
+  },
+  head () {
+    return {
+      bodyAttrs: {
+        // lock body scroll if cart-feedback is opened
+        class: [ (this.hasFeedback && 'overflow-hidden') || '' ]
+      },
+    }
+  },
+  computed: {
+    ...mapGetters('books', [ 'books' ]),
+    ...mapGetters('cart', [ 'feedback', 'hasFeedback' ]),
+    suggestedBooks () {
+      if (!this.query) {
+        return this.books
+      }
+
+      return filterHighlighted(this.books, this.query, [ 'title' ])
+    },
+  },
+  methods: {
+    ...mapActions('cart', [ 'clearFeedback' ]),
+  }
+}
+</script>

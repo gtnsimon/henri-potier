@@ -1,0 +1,14 @@
+# nuxt is running on NodeJS
+runtime: nodejs12
+# service to deploy
+service: henri-potier
+
+# scale up to 1 instance
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1
+
+# should be the same in .env-gcp-build
+env_variables:
+  API_URL: "https://henri-potier.techx.fr/books"
+  PUBLIC_PATH: "https://static.gtnsimon.dev/henri-potier/"

@@ -1,0 +1,5 @@
+.env
+.env-gcp-build
+.nuxt
+
+node_modules

@@ -1,0 +1,9 @@
+dispatch:
+  - url: "gtnsimon.dev/*"
+    service: default
+  - url: "en.gtnsimon.dev/*"
+    service: default
+  - url: "henri-potier.gtnsimon.dev/*"
+    service: henri-potier
+  - url: "www.gtnsimon.dev/*"
+    service: default

@@ -1,0 +1,56 @@
+.books-suggestions-list {
+  &__suggestion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.25rem 0.75rem 0.25rem 1.5rem;
+  }
+
+  &__content {
+    flex: 1;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__cover {
+    $ratio: 0.68;
+
+    flex: 0 0 (64px * $ratio);
+    width: 64px * $ratio;
+    height: 64px;
+    background-color: $disabled;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1;
+    @include rfs(12px);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @include media-breakpoint-up(sm) {
+      @include rfs(14px);
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    margin-bottom: 0;
+    @include rfs(18px);
+    font-weight: 600;
+    line-height: 1.4;
+    color: $green;
+  }
+
+  &__action {
+    flex: 0;
+    align-self: center;
+    font-size: 18px;
+    padding: 6px;
+  }
+}

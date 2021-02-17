@@ -1,0 +1,134 @@
+$card-width-large: 280px;
+$card-width-normal: 220px;
+
+.books-list {
+  display: grid;
+  gap: 22px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, $card-width-large);
+
+  @include media-breakpoint-up(sm) {
+    grid-template-columns: repeat(auto-fit, $card-width-normal);
+  }
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 4px;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover &__synopsis {
+        visibility: visible;
+      }
+    }
+
+    &__cover {
+      &-wrapper {
+        $ratio: 1.46;
+
+        z-index: 0;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: $card-width-large * $ratio;
+        overflow: hidden;
+
+        @include media-breakpoint-up(sm) {
+          height: $card-width-normal * $ratio;
+        }
+
+        background-color: $disabled;
+        border-radius: 4px 4px 0 0;
+      }
+
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: 50%;
+      border-radius: 4px 4px 0 0;
+    }
+
+    &__synopsis {
+      z-index: 1;
+      visibility: hidden;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      padding: 8px;
+      font-size: 12px;
+      line-height: 1.4;
+
+      color: #FFF;
+      background: linear-gradient(rgba(#000, 0.65), rgba(#000, 0.95));
+
+      > p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 19;
+        overflow: hidden;
+      }
+
+      &::after {
+        pointer-events: none;
+        z-index: 2;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: block;
+        height: 12px * 1.4 * 2;
+        background: linear-gradient(transparent, rgba(#000, 1));
+      }
+    }
+
+    &__nav {
+      z-index: 1;
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      padding-top: 1px;
+      column-gap: 1px;
+      margin-top: -1px;
+      background-color: $disabled;
+      border: 1px solid var(--book-color, $disabled);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+
+      > .btn {
+        width: 100%;
+        font-weight: 700;
+
+        &-amplificatum {
+          font-size: 12px;
+        }
+
+        &:not(:hover) {
+          color: $gray-600;
+        }
+
+        &:first-child {
+          border-radius: 0 0 0 4px;
+        }
+
+        &:last-child {
+          border-radius: 0 0 4px 0;
+        }
+      }
+    }
+  }
+
+}

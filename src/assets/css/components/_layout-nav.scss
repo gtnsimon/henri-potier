@@ -1,0 +1,93 @@
+.layout-nav {
+  display: grid;
+  row-gap: 24px;
+  grid-auto-columns: 1fr;
+  grid-template-areas:  "brand cart"
+                        "search search";
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 45% 1fr;
+    grid-template-areas: "brand search cart";
+  }
+
+  .navbar-brand {
+    grid-area: brand;
+    margin-right: 0;
+    justify-self: flex-start
+  }
+
+  &__search {
+    grid-area: search;
+    position: relative;
+
+    & > .form-inline,
+    &__form {
+      flex: 1;
+    }
+
+    > .form-inline {
+      padding-top: 1.4em;
+    }
+
+    &__form {
+      > .form-control {
+        height: 48px;
+        flex: 1;
+      }
+    }
+
+    > .dropdown {
+      position: absolute;
+      top: calc(48px + 1.4em);
+      right: 0;
+      left: 0;
+
+      > .dropdown-menu {
+        position: relative;
+        margin-top: 0;
+        background-clip: border-box;
+        overflow-y: auto;
+        max-height: 336px;
+
+        @include media-breakpoint-up(sm) {
+          max-height: 264px;
+        }
+      }
+    }
+  }
+
+  &__cart {
+    grid-area: cart;
+    justify-content: flex-end;
+  }
+
+  &__btn-cart {
+    position: relative;
+
+    // place badge in top right corner of cart icon
+    &__badge {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(calc(-50% + 0.5rem), calc(-50% - 0.5rem));
+
+      .badge {
+        animation: scale 125ms ease-in;
+      }
+    }
+  }
+
+  .accio-label {
+    position: absolute;
+    top: 0;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
