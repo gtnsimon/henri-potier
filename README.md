@@ -35,6 +35,8 @@ Pour la magie :
 
 ## Lancer le projet
 
+- Exécuter `yarn`
+
 ### Pour le développement
 
 - Cloner le repo.
