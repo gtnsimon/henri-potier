@@ -11,4 +11,4 @@ automatic_scaling:
 # should be the same in .env-gcp-build
 env_variables:
   API_URL: "https://henri-potier.techx.fr/books"
-  PUBLIC_PATH: "https://static.gtnsimon.dev/henri-potier/"
+  PUBLIC_PATH: "https://storage.googleapis.com/static.gtnsimon.dev/henri-potier/"
