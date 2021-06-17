@@ -64,7 +64,7 @@ export default {
       bookId: null, // current book id (from route params)
       discount: null, // best discount applied
       discountLoading: true, // is discount is fetching
-      quantity: null, // current quantity in <b-select />
+      quantity: 1, // current quantity in <b-select />
     }
   },
   head () {

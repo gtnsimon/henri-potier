@@ -26,7 +26,7 @@
             <!-- Price -->
             <dt>Prix&nbsp;:</dt>
             <dd class="book-infos__buy__price">
-              <span :class="[ discount && 'old' ]">{{ book.totalPrice }}€</span>
+              <span :class="[ discount && 'old' ]">{{ book.price * quantity }}€</span>
 
               <b-spinner v-if="discountLoading" small variant="secondary" />
               <span v-else-if="discount" class="new">{{ discount.fixedPrice }}€</span>
