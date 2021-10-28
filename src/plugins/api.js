@@ -15,6 +15,18 @@ const BOOKS_COLORS = {
   'bbcee412-be64-4a0c-bf1e-315977acd924': '#486680',
 }
 
+// should be read in that order
+// could be used to suggests related books (previous or next book to have)
+const BOOKS_ORDERS = {
+  'c8fabf68-8374-48fe-a7ea-a00ccd07afff': 1,
+  'a460afed-e5e7-4e39-a39d-c885c05db861': 2,
+  'fcd1e6fa-a63f-4f75-9da4-b560020b6acc': 3,
+  'c30968db-cb1d-442e-ad0f-80e37c077f89': 4,
+  '78ee5f25-b84f-45f7-bf33-6c7b30f1b502': 5,
+  'cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6': 6,
+  'bbcee412-be64-4a0c-bf1e-315977acd924': 7,
+}
+
 export default function (ctx, inject) {
   const { $axios, $urljoin, store } = ctx
 
@@ -24,12 +36,16 @@ export default function (ctx, inject) {
      * Fetch books from Publicis Sapient test API.
      * Its add prop `color` to display fancies colors on UI.
      */
-    getBooks () {
-      return $axios.$get()
-        .then(books => books.map(book => ({
+    async getBooks () {
+      const books = await $axios.$get()
+
+      return books
+        .map(book => ({
           ...book,
+          order: BOOKS_ORDERS[book.isbn] || -1,
           color: BOOKS_COLORS[book.isbn],
-        })))
+        }))
+        .sort(({ order: a }, { order: b }) => a - b)
     },
     /**
      * Get the best offer (called discount) from Publicis Sapient test API for given books prices' and quantities'
