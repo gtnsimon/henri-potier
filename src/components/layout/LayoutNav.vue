@@ -40,10 +40,12 @@
       </form>
 
       <!-- List of suggested books -->
-      <books-suggestions-list
-        :books="suggestionsBooks"
-        :show="show"
-      />
+      <client-only>
+        <books-suggestions-list
+          :books="suggestionsBooks"
+          :show="show"
+        />
+      </client-only>
     </b-navbar-nav>
 
     <!-- Cart with badge to indicate number of items -->
