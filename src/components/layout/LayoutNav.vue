@@ -23,7 +23,7 @@
           class="text-white accio-label"
         >Accio livre</label>
 
-        <!-- Input to search a bookn -->
+        <!-- Input to search a book -->
         <b-form-input
           @input="$emit('search', $event)"
           @focus="show = true"

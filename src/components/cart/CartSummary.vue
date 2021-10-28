@@ -23,7 +23,7 @@
       </template>
 
       <template v-else>
-        <dd>Aucun promotion trouvée 😕</dd>
+        <dd>Aucune promotion trouvée 😕</dd>
       </template>
     </dl>
 
