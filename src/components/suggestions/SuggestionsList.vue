@@ -1,5 +1,5 @@
 <template>
-  <div
+  <aside
     v-show="show"
     class="dropdown b-dropdown"
   >
@@ -37,7 +37,7 @@
         </slot>
       </b-dropdown-text>
     </ul>
-  </div>
+  </aside>
 </template>
 
 <script>
