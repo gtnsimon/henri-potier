@@ -17,16 +17,32 @@ $card-width-normal: 220px;
 
   &-item {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    border-radius: 4px;
 
     @media (hover: hover) and (pointer: fine) {
-      &:hover &__synopsis {
+      &__body:hover &__synopsis {
         visibility: visible;
       }
+    }
+
+    &__header {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 0.5em;
+    }
+
+    &__title {
+      display: inline-flex;
+      align-items: flex-end;
+      min-height: #{5 * 0.875em};
+      font-size: 0.875em;
+    }
+
+    &__body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-radius: 4px;
     }
 
     &__cover {
