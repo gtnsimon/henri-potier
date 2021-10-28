@@ -29,15 +29,13 @@ export function highlight (haystack, needles, [ LT, GT = LT ] = [ '<b>', '</b>' 
   const charsList = needles
     .map(needle => deaccented.matchAll(new RegExp(needle, 'ig')))
     .flatMap(matched => Array.from(matched))
-    .flatMap(matched => Array(matched[0].length)
-      .fill(matched.index)
-      .map((i, j) => i + j)
-    )
+    .flatMap(matched => Array(matched[0].length).fill(matched.index).map((i, j) => i + j))
 
   return sortedUniq(sortBy(charsList))
     .reduce(mapRange, [])
     .reduce((value, [ start, end = start ], i) => {
       const endInclusive = end + 1
+
       const before = value.slice(0, start + (i && delimitersLength * i))
       const highlighted = LT + haystack.slice(start, endInclusive) + GT
       const after = value.slice(endInclusive + (i && delimitersLength * i))
