@@ -11,7 +11,7 @@
 
     <footer class="gtnsimon">
       <b-container>
-        <p class="gtnsimon__by">Proposé par <a href="https://gtnsimon.dev/?gh=henri-potier" target="_blank" rel="noopener noreferrer" title="Travailler avec Gaëtan SIMON">Gaëtan SIMON</a>, <em>développeur web passionné</em> - <a href="https://github.com/gtnsimon/henri-potier" target="_blank" title="Consulter le code source du projet">GitHub</a></p>
+        <p class="gtnsimon__by">Proposé par <a href="https://gtnsimon.dev/?gh=henri-potier" target="_blank" rel="noreferrer" title="Travailler avec Gaëtan SIMON">Gaëtan SIMON</a>, <em>développeur web passionné</em> - <a href="https://github.com/gtnsimon/henri-potier" target="_blank" rel="noreferrer" title="Consulter le code source du projet">GitHub</a></p>
       </b-container>
     </footer>
 
