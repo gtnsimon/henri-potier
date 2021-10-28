@@ -19,7 +19,25 @@ body {
 }
 
 .layout {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+
+  > .layout-nav {
+    flex: 0;
+  }
+
+  > .layout-page {
+    flex: 1;
+  }
+}
+
+.gtnsimon {
+  &__by {
+    padding: 0 0 2em 0;
+    line-height: 1.35;
+    text-align: center;
+  }
 }
 
 /// Components styles
