@@ -1,6 +1,6 @@
 # La bibliothèque d'Henri Potier
 
-[Exercice technique](https://github.com/xebia-france/recruitment-tests/blob/master/ExerciceFront.md) Publicis Sapient.
+<img width="1974" alt="Interface développée pour l'exercice" src="https://github.com/user-attachments/assets/1a50af1a-12b7-431d-a727-3b9c7128c3ee" />
 
 ## Techno.
 
@@ -68,3 +68,5 @@ Pour la magie :
 - `yarn run test`
 
 Je me rend compte que je suis une quiche pour ça et qu'il faut vraiment que je prenne le temps de tester la partie vue/vuex. Le test visuel lors du développement sur un projet de cette taille peut suffir dans la limite du raisonnable mais là c'est pas dans mes capacités *(sinon c'est dans 3 mois... 3 mois ?... 3 mois ?... 3 mwaaa)*.
+
+[Exercice technique](https://github.com/xebia-france/recruitment-tests/blob/master/ExerciceFront.md) Publicis Sapient.
